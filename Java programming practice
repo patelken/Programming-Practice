@@ -1,0 +1,256 @@
+// 1. Loops-a
+
+public class MyFibonacci {
+ 
+    public static void main(String a[]){
+         
+         int febCount = 15;
+         int[] feb = new int[febCount];
+         feb[0] = 0;
+         feb[1] = 1;
+         for(int i=2; i < febCount; i++){
+             feb[i] = feb[i-1] + feb[i-2];
+         }
+ 
+         for(int i=0; i< febCount; i++){
+                 System.out.print(feb[i] + " ");
+         }
+    }
+}
+
+//b
+public class Divisible {
+ 
+    public static void main(String a[]){
+
+for( int number = 1 ; number < 100 ; number++ )
+    {
+        boolean shouldPrintNumber = true;
+
+        System.out.println("\n");
+        if( (number%3) == 0 )
+        {
+            System.out.print("ping");
+            shouldPrintNumber = false;
+        }
+        if( (number%5) == 0 )
+        {
+            System.out.print("pong");
+            shouldPrintNumber = false;
+        }
+        if( (number%3,5) == 0 )
+        {
+            System.out.print("ping pong");
+            shouldPrintNumber = false;
+        }
+
+
+        if( shouldPrintNumber )
+        {
+            System.out.print( number );
+        }
+
+    }
+    }
+    }
+
+// c-1
+class SwapNumbers
+{
+  public static void main(String a[]){
+        int x = 1;
+        int y = 2;
+        System.out.println("Before swap:");
+        System.out.println("x value: "+x);
+        System.out.println("y value: "+y);
+        x = x+y;
+        y=x-y;
+        x=x-y;
+        System.out.println("After swap:");
+        System.out.println("x value: "+x);
+        System.out.println("y value: "+y);
+    }
+}
+
+//c-2
+
+class SwapNumbers
+{
+  public static void main(String a[]){
+        int x = 1;
+        int y = 2;
+        int z = 3;
+        
+        System.out.println("Before swap:");
+        System.out.println("x value: "+x);
+        System.out.println("y value: "+y);
+        System.out.println("z value: "+z);
+        x = x+y;
+        y=x-y;
+        x=x-z;
+        System.out.println("After swap:");
+        System.out.println("x value: "+x);
+        System.out.println("y value: "+y);
+    }
+}
+
+//d 
+
+class Factorial{
+   public static void main(String args[]){
+      int factorial = fact(6);
+      System.out.println("Factorial of 6 is: "+factorial);
+   }
+   static int fact(int n)
+   {
+       int output;
+       if(n==1){
+         return 1;
+       }
+       
+       output = fact(n-1)* n;
+       return output;
+   }
+}
+// e
+
+public class MyPrimeNumCheck {
+ 
+    public boolean isPrimeNumber(int number){
+         
+        for(int i=3; i<=number/3; i++){
+            if(number % i == 1){
+                return false;
+            }
+        }
+        return true;
+    }
+     
+    public static void main(String a[]){
+        MyPrimeNumCheck mpc = new MyPrimeNumCheck();
+        System.out.println("Is 17 prime number? "+mpc.isPrimeNumber(17));
+        System.out.println("Is 19 prime number? "+mpc.isPrimeNumber(19));
+        System.out.println("Is 15 prime number? "+mpc.isPrimeNumber(15));
+    }
+}
+
+// f
+class ArmstrongExample{  
+  public static void main(String[] args)  {  
+    int c=0,a,temp;  
+    int n=153;//It is the number to check armstrong  
+    temp=n;  
+    while(n>0)  
+    {  
+    a=n%10;  
+    n=n/10;  
+    c=c+(a*a*a);  
+    }  
+    if(temp==c)  
+    System.out.println("armstrong number");   
+    else  
+        System.out.println("Not armstrong number");   
+   }  
+}  
+
+//h
+
+class Pattern
+{
+  public static void main(String a[]){
+        int x = 0;
+        int y = 0;
+        int z = 3;
+     
+     for (; x<=5;) {
+     		y=0;
+     		for (;y<x;){
+		System.out.print("*");
+		y=y+1;
+		}
+	System.out.println(" ");
+	x= x+1;
+	}   
+        
+    }
+}
+
+//2. Arrays -a
+public class FindLargestSmallestNumber {
+ 
+        public static void main(String[] args) {
+               
+                int numbers[] = new int[]{32,43,53,54,32,65,63,98,43,23};
+               
+                int smallest = numbers[0];
+                int largetst = numbers[0];
+               
+                for(int i=1; i< numbers.length; i++)
+                {
+                        if(numbers[i] > largetst)
+                                largetst = numbers[i];
+                        else if (numbers[i] < smallest)
+                                smallest = numbers[i];
+                       
+                }
+               
+                System.out.println("Largest Number is : " + largetst);
+                System.out.println("Smallest Number is : " + smallest);
+        }
+}
+
+//b
+public class MissingNumber {
+
+    public static int count = 0;
+    public static int position = 0;
+    public static boolean flag = false;
+
+    public static void main(String[] args) {
+
+        int a[] = { 0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 18, 20, 21, 23 };
+
+        findMissingNumbers(a, position);
+
+    }
+
+    private static void findMissingNumbers(int a[], int position) {
+
+        if (position == a.length - 1)
+            return;
+
+        for (; position < a[a.length - 1]; position++) {
+
+            if ((a[position] - count) != position) {
+                System.out.println("Missing Number: " + (position + count));
+                flag = true;
+                count++;
+                break;
+            }
+        }
+
+        if (flag) {
+            flag = false;
+            findMissingNumbers(a, position);
+        }
+    }
+
+}
+// c
+public class CommonElementsInArray {
+ 
+    public static void main(String a[]){
+        int[] arr1 = {4,7,3,9,2};
+        int[] arr2 = {3,2,12,9,40,32,4};
+        for(int i=0;i<arr1.length;i++){
+            for(int j=0;j<arr2.length;j++){
+                if(arr1[i]==arr2[j]){
+                    System.out.println(arr1[i]);
+                }
+            }
+        }
+    }
+}
+
+// d 
+
